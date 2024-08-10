@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="551" pageHeight="441" columnWidth="511" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cf7cfbee-cb68-4eb3-96fc-e9ae148aea3d">
+	<property name="ireport.zoom" value="1.6105100000000063"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<parameter name="TONGTIEN_HD" class="java.lang.String"/>
+	<parameter name="TIEN_KHACH_GUI" class="java.lang.String"/>
+	<parameter name="TONGTIEN_GG" class="java.lang.String"/>
+	<parameter name="TONGTIEN_TL" class="java.lang.String"/>
+	<parameter name="ID_HOADON" class="java.lang.String"/>
+	<parameter name="MANV" class="java.lang.String"/>
+	<parameter name="MAKH" class="java.lang.String"/>
+	<parameter name="NGAYLAP_HD" class="java.lang.String"/>
+	<parameter name="TONG_SO_LUONG" class="java.lang.String"/>
+	<field name="TENMH" class="java.lang.String"/>
+	<field name="SOLUONG" class="java.lang.String"/>
+	<field name="THANH_TIEN_GG" class="java.lang.String"/>
+	<field name="GIA_BAN" class="java.lang.String"/>
+	<field name="THANH_TIEN" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="76" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="421" height="26" uuid="935424b5-8d47-4816-a22e-d8a31220d030"/>
+				<box>
+					<pen lineColor="#009966"/>
+					<topPen lineColor="#009966"/>
+					<leftPen lineColor="#009966"/>
+					<bottomPen lineColor="#009966"/>
+					<rightPen lineColor="#009966"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PHIẾU THANH TOÁN BÁCH HÓA XANH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="26" width="55" height="20" uuid="99f4b847-ede4-4817-94d3-d817bab8fb00"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[ID - HD:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="213" y="26" width="45" height="20" uuid="fbc5895c-4a55-4889-9c34-d2a5d2e10220"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[ID - NV:]]></text>
+			</staticText>
+			<image>
+				<reportElement x="440" y="0" width="71" height="76" uuid="8bb2fef0-d2cf-49ed-9d08-4d4adcaba8ad"/>
+				<imageExpression><![CDATA["E:\\HK6\\DoAn_Java_BHX\\src\\BHX_IMG\\folderImages\\images\\logo\\Icon-Bach-Hoa-Xanh.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="52" width="55" height="20" uuid="886667ce-4c3e-4f21-a7b7-f7433941596d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Ngày Lập:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="213" y="52" width="45" height="20" uuid="058be34e-41e4-4c96-bb3f-d3bf3fc89706"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[ID - KH:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="258" y="26" width="163" height="20" uuid="d7e8a302-529a-4658-a84a-cd47b6c65f2d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{MANV}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="258" y="52" width="163" height="20" uuid="e72a3ffa-4468-461f-affc-ce486d68242f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{MAKH}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="55" y="52" width="158" height="20" uuid="7359c11d-d5de-4408-a814-04083bf72304"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NGAYLAP_HD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="55" y="26" width="158" height="20" uuid="dd3b84ef-d650-4abb-98a5-68531885149a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ID_HOADON}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="1" width="100" height="20" uuid="d46369ef-57d6-4b99-9294-4e9c8869f137"/>
+				<box>
+					<pen lineColor="#009966"/>
+					<topPen lineColor="#009966"/>
+					<leftPen lineColor="#009966"/>
+					<bottomPen lineColor="#009966"/>
+					<rightPen lineColor="#009966"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SỐ LƯỢNG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="1" width="142" height="20" uuid="a1f5f7fb-c215-4835-9756-e0ddf10f4a9c"/>
+				<box>
+					<pen lineColor="#009966"/>
+					<topPen lineColor="#009966"/>
+					<leftPen lineColor="#009966"/>
+					<bottomPen lineColor="#009966"/>
+					<rightPen lineColor="#009966"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GIÁ BÁN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="1" width="127" height="20" uuid="cc144c8f-01c0-4678-957e-7df63d44db04"/>
+				<box>
+					<pen lineColor="#009966"/>
+					<topPen lineColor="#009966"/>
+					<leftPen lineColor="#009966"/>
+					<bottomPen lineColor="#009966"/>
+					<rightPen lineColor="#009966"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[THÀNH TIỀN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="1" width="142" height="20" uuid="eb6a777d-3b06-4123-9d98-e55854341bb6"/>
+				<box>
+					<pen lineColor="#009966"/>
+					<topPen lineColor="#009966"/>
+					<leftPen lineColor="#009966"/>
+					<bottomPen lineColor="#009966"/>
+					<rightPen lineColor="#009966"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GIẢM GIÁ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="21" width="511" height="1" uuid="876142a7-493b-4586-a3e3-7c1e35970cee"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="511" height="1" uuid="de8896d0-eaf8-4500-92d9-42ee6a4edbfe"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="511" height="41" uuid="44d556ab-f2b0-412b-8e20-b12aaea9338c"/>
+				<textField isStretchWithOverflow="true" pattern="#.###.### đ">
+					<reportElement x="384" y="20" width="127" height="20" uuid="b34cfb0e-d8e9-4b7e-870d-dbcd5d04bae9"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12" isItalic="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{THANH_TIEN}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#.###.### đ">
+					<reportElement x="100" y="20" width="142" height="20" uuid="19218bfe-d432-408e-a546-00d8809dfb4e"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12" isItalic="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{GIA_BAN}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="242" y="20" width="142" height="20" uuid="932d287e-68d5-4096-862f-ea6577d98669"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12" isItalic="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{THANH_TIEN_GG}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="100" height="20" uuid="46de7896-8506-4e9b-b27a-44303427d671"/>
+					<box>
+						<pen lineColor="#009966"/>
+						<topPen lineColor="#009966"/>
+						<leftPen lineColor="#009966"/>
+						<bottomPen lineColor="#009966"/>
+						<rightPen lineColor="#009966"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[Tên Sản Phẩm:]]></text>
+				</staticText>
+				<textField pattern="#.####">
+					<reportElement x="0" y="20" width="100" height="20" uuid="f61e260c-4ae0-4100-8c1a-dca4fce32bb1"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12" isItalic="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{SOLUONG}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="100" y="0" width="411" height="20" uuid="b8ba61f8-bab7-491e-bfc3-fc6b2d9a1b55"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12" isBold="true" isItalic="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TENMH}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="146" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="20" width="229" height="20" uuid="fc5a6bd8-3513-4e5f-99ae-17e776215a63"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[TỔNG TIỀN PHẢI THANH TOÁN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="180" height="20" uuid="dd4b9e15-bc23-48d2-acba-655840c5f940"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[TỔNG TIỀN GIẢM GIÁ:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="164" height="20" uuid="8b5130f6-b8e8-4f61-88ab-348d0a9d49ea"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[TIỀN KHÁCH GỬI:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="164" height="20" uuid="764eff3c-e1c6-4282-a5d3-47430c25ce81"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[TIỀN TRẢ LẠI:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="115" width="354" height="1" uuid="aa702c6f-0695-4dde-b869-31cf4422012a"/>
+			</line>
+			<staticText>
+				<reportElement x="354" y="105" width="157" height="20" uuid="f027a29b-9337-4479-bf81-d99bee922d46"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Tổng đài khiếu nại/hỗ trợ: 00000000]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="154" y="125" width="230" height="19" uuid="45d179f2-a9a9-4565-8ebe-8e0fa9eba41d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Thank you & See you again !]]></text>
+			</staticText>
+			<textField pattern="#.###.### đ">
+				<reportElement x="272" y="20" width="239" height="20" uuid="53dc9a04-4a5a-49f3-81cb-6eaeb3cfd384"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TONGTIEN_HD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="40" width="239" height="20" uuid="d1a31bcd-0a48-4db9-9a81-186b9c4bd9dc"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TONGTIEN_GG}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="60" width="239" height="20" uuid="6c4b4884-bff4-4a42-8c41-46b3cbb396ee"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TIEN_KHACH_GUI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="80" width="239" height="20" uuid="53f055bb-4818-44a0-a5eb-dce01317d9fa"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TONGTIEN_TL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="276" y="0" width="209" height="20" uuid="8b0c92fc-fb9f-4635-a5aa-ea30a2e6155c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[TỔNG SỐ LƯỢNG SẢN PHẨM:]]></text>
+			</staticText>
+			<textField pattern="">
+				<reportElement x="485" y="0" width="26" height="20" uuid="f0447e2f-145d-49a7-905c-678ce7f04467"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TONG_SO_LUONG}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="511" height="1" uuid="7d32c423-0976-4e2e-a707-c06889289636"/>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>

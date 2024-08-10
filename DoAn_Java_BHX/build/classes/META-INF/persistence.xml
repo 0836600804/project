@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="DoAn_Java_BHXPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>BHX_MODEL.Database.model.Ncc</class>
+    <class>BHX_MODEL.Database.model.Tinhthanh</class>
+    <class>BHX_MODEL.Database.model.QuanHuyen</class>
+    <class>BHX_MODEL.Database.model.NhomLoaiMathang</class>
+    <class>BHX_MODEL.Database.model.Hoadon</class>
+    <class>BHX_MODEL.Database.model.ChitietPhieuNhaphang</class>
+    <class>BHX_MODEL.Database.model.UsersLogin</class>
+    <class>BHX_MODEL.Database.model.Khachhang</class>
+    <class>BHX_MODEL.Database.model.XaPhuong</class>
+    <class>BHX_MODEL.Database.model.Nhanvien</class>
+    <class>BHX_MODEL.Database.model.GiamGia</class>
+    <class>BHX_MODEL.Database.model.Brand</class>
+    <class>BHX_MODEL.Database.model.LoaiPhanquyen</class>
+    <class>BHX_MODEL.Database.model.MatHang</class>
+    <class>BHX_MODEL.Database.model.QuequanNhanvien</class>
+    <class>BHX_MODEL.Database.model.ChitietHoadon</class>
+    <class>BHX_MODEL.Database.model.LoaiMathang</class>
+    <class>BHX_MODEL.Database.model.PhieuNhaphang</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://127.0.0.1:1433;databaseName=QL_BANHANG_BHX;encrypt=true;trustServerCertificate=true;"/>
+      <property name="javax.persistence.jdbc.user" value="sa"/>
+      <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+      <property name="javax.persistence.jdbc.password" value="123"/>
+    </properties>
+  </persistence-unit>
+</persistence>
