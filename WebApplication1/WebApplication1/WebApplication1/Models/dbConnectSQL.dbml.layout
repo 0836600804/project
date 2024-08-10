@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 11.875" name="dbConnectSQL">
+  <DataContextMoniker Name="/dbConnectSQLDataContext" />
+  <nestedChildShapes>
+    <classShape Id="dd7b0492-78eb-4b38-a7b9-fa23942eaa2d" absoluteBounds="9, 2.5, 2, 1.578595377604167">
+      <DataClassMoniker Name="/dbConnectSQLDataContext/CHITIETHD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="821ac6ce-cfe4-43a7-9e06-3975450bb511" absoluteBounds="9.015, 2.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fababa72-0260-4c6a-9648-708c371b0530" absoluteBounds="3.5, 2.125, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/dbConnectSQLDataContext/XEMAY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="687502d4-6b55-4256-b6f1-8e9afe48a9fc" absoluteBounds="3.515, 2.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="86484982-7a39-4b3f-9e1a-e0a173f075b4" absoluteBounds="6.25, 9.375, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/dbConnectSQLDataContext/HOADON" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dab08124-44b6-4f72-80de-4cf9f8bb1a2d" absoluteBounds="6.265, 9.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="da431391-dad3-4060-bb7d-eaf60a0de708" absoluteBounds="3.5, 9.125, 2, 2.5401025390624987">
+      <DataClassMoniker Name="/dbConnectSQLDataContext/KHACHHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="28b2dec2-febe-45a5-86ab-b3f1b0042b15" absoluteBounds="3.515, 9.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2be5bf6c-976b-4987-8efe-a08e68620ded" absoluteBounds="0.75, 2.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/dbConnectSQLDataContext/LOAIXE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0f4a5a8e-fac9-4728-930b-99ffc492f466" absoluteBounds="0.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="88a3560f-c2e9-46a9-a25b-4005fdc113f1" absoluteBounds="6.25, 2.625, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/dbConnectSQLDataContext/NCC_XEMAY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e7784833-14b0-4ae3-87b3-eb7e5594d673" absoluteBounds="6.265, 3.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b1ba936d-724b-492f-9320-57d2a72c5064" absoluteBounds="3.5, 6.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbConnectSQLDataContext/NHACUNGCAP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2d3ca04d-c4b6-434f-8ed1-dec68aa690ac" absoluteBounds="3.515, 6.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="38e09ba7-fb79-4723-8b4a-70738ab2d31e" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/dbConnectSQLDataContext/THUONGHIEUXE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="835a33b1-e82c-46b5-91eb-80fb279e7f2d" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 10.3565991210937); (10 : 10.3565991210937); (10 : 4.07859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbConnectSQLDataContext/HOADON/HOADON_CHITIETHD" />
+      <nodes>
+        <classShapeMoniker Id="86484982-7a39-4b3f-9e1a-e0a173f075b4" />
+        <classShapeMoniker Id="dd7b0492-78eb-4b38-a7b9-fa23942eaa2d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 10.3565991210937); (6.25 : 10.3565991210937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbConnectSQLDataContext/KHACHHANG/KHACHHANG_HOADON" />
+      <nodes>
+        <classShapeMoniker Id="da431391-dad3-4060-bb7d-eaf60a0de708" />
+        <classShapeMoniker Id="86484982-7a39-4b3f-9e1a-e0a173f075b4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.34699625651042); (3.5 : 3.34699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbConnectSQLDataContext/LOAIXE/LOAIXE_XEMAY" />
+      <nodes>
+        <classShapeMoniker Id="2be5bf6c-976b-4987-8efe-a08e68620ded" />
+        <classShapeMoniker Id="fababa72-0260-4c6a-9648-708c371b0530" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 3.31814697265625); (9 : 3.31814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbConnectSQLDataContext/NCC_XEMAY/NCC_XEMAY_CHITIETHD" />
+      <nodes>
+        <classShapeMoniker Id="88a3560f-c2e9-46a9-a25b-4005fdc113f1" />
+        <classShapeMoniker Id="dd7b0492-78eb-4b38-a7b9-fa23942eaa2d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.31814697265625); (6.25 : 3.31814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbConnectSQLDataContext/XEMAY/XEMAY_NCC_XEMAY" />
+      <nodes>
+        <classShapeMoniker Id="fababa72-0260-4c6a-9648-708c371b0530" />
+        <classShapeMoniker Id="88a3560f-c2e9-46a9-a25b-4005fdc113f1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 7.28929768880208); (7.25 : 7.28929768880208); (7.25 : 4.0112939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbConnectSQLDataContext/NHACUNGCAP/NHACUNGCAP_NCC_XEMAY" />
+      <nodes>
+        <classShapeMoniker Id="b1ba936d-724b-492f-9320-57d2a72c5064" />
+        <classShapeMoniker Id="88a3560f-c2e9-46a9-a25b-4005fdc113f1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.34699625651042); (4.5 : 1.34699625651042); (4.5 : 2.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbConnectSQLDataContext/THUONGHIEUXE/THUONGHIEUXE_XEMAY" />
+      <nodes>
+        <classShapeMoniker Id="38e09ba7-fb79-4723-8b4a-70738ab2d31e" />
+        <classShapeMoniker Id="fababa72-0260-4c6a-9648-708c371b0530" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

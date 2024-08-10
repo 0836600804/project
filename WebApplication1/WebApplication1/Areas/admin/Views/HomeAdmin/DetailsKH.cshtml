@@ -1,0 +1,56 @@
+﻿@model WebApplication1.Models.KHACHHANG
+
+@{
+    ViewBag.Title = "DetailsKH";
+    Layout = "~/Areas/admin/Views/Shared/user-admin.cshtml";
+}
+
+
+
+<div>
+    <dl class="dl-horizontal" style="">
+        <h2>Thông tin khách hàng</h2>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.TENKHACHHANG):
+            @Html.DisplayFor(model => model.TENKHACHHANG)
+        </dt>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYSINH):
+            @Html.DisplayFor(model => model.NGAYSINH)
+        </dt>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIOITINH):@Html.DisplayFor(model => model.GIOITINH)
+        </dt>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SODIENTHOAI):@Html.DisplayFor(model => model.SODIENTHOAI)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.TAIKHOAN):@Html.DisplayFor(model => model.TAIKHOAN)
+        </dt>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MATKHAU):@Html.DisplayFor(model => model.MATKHAU)
+        </dt>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL):@Html.DisplayFor(model => model.EMAIL)
+        </dt>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIACHI): @Html.DisplayFor(model => model.DIACHI)
+        </dt>
+
+
+    </dl>
+</div>
+<p>
+   
+    @Html.ActionLink("Back to List", "IndexKhachHang")
+</p>

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<WebApplication1.Models.THUONGHIEUXE>
+<ul class="list-group list-group-flush text-left">
+    <li class="list-group-item" style="background-color:aqua;">
+        <a href="#" style="text-transform:uppercase; text-decoration:none; color:black; font-weight:bold;">Thương Hiệu Xe Máy</a>
+    </li>
+    @foreach (var item in Model)
+    {
+        <li class="list-group-item">
+            <a href="@Url.Action("XeMayTheoHang","XeMay", new {MaHang=item.MATHUONGHIEU})">@item.TENTHUONGHIEU</a>
+        </li>
+    }
+    <li class="list-group-item">
+        <a href="#" style="text-transform:uppercase; text-decoration:none;"> </a>
+    </li>
+</ul>
+
+
+

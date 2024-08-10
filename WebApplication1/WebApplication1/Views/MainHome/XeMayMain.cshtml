@@ -1,0 +1,70 @@
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model IPagedList<WebApplication1.Models.XEMAY>
+
+
+@{
+    ViewBag.Title = "XeMayMain";
+    Layout = "~/Views/Share/_LayoutMain.cshtml";
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<div class="row">
+    @{
+        foreach (var item in Model)
+        {
+            <div class="col-4">
+                <img src="~/Image/@item.HINHANH" width="60%" height="70%" />
+                @if (item.TENXEMAY.Length > 30)
+                {
+                    <p>
+                        Tên Xe: <b>@item.TENXEMAY.Substring(0, 30)</b>
+
+
+                    </p>
+
+                }
+                else
+                {
+                    <p style="color:darkblue">
+                        Tên Xe Máy: <b style="color:black">@item.TENXEMAY</b> <br />
+                        Giá bán: <b style="color:black">@string.Format("{0:0,0}", item.GIABANXE)</b> VNĐ <br />
+
+                    </p>
+                }
+            </div>
+
+        }
+    }
+</div>
+<div style="margin-left: 35%">
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            @if (Model.PageCount > 1)
+            {
+                <li class="page-item @(Model.IsFirstPage ? "disabled" : "")">
+                    <a class="page-link" href="@Url.Action("XeMayMain", "MainHome", new { page = 1 })" tabindex="-1" aria-disabled="@(Model.IsFirstPage ? "true" : "false")"><<</a>
+                </li>
+                for (int i = 1; i <= Model.PageCount; i++)
+                {
+                    <li class="page-item @(i == Model.PageNumber ? "active" : "")">
+                        <a class="page-link" href="@Url.Action("XeMayMain", "MainHome",  new { page = i })">@i</a>
+                    </li>
+                }
+
+                <li class="page-item @(Model.IsLastPage ? "disabled" : "")">
+                    <a class="page-link" href="@Url.Action("XeMayMain", "MainHome", new { page = Model.PageNumber + 1 })">>></a>
+                </li>
+
+            }
+        </ul>
+    </nav>
+
+
+</div>
+
+

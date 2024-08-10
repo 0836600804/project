@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QL_XEMAYModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CHITIETHD">
+    <Key>
+      <PropertyRef Name="MAHOADON" />
+      <PropertyRef Name="MACC_XEMAY" />
+    </Key>
+    <Property Name="MAHOADON" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="MACC_XEMAY" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="SOLUONGMUA" Type="Int32" />
+    <Property Name="DONGIA" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="NCC_XEMAY" Relationship="Self.FK__CHITIETHD__MACC___5CD6CB2B" FromRole="CHITIETHD" ToRole="NCC_XEMAY" />
+    <NavigationProperty Name="HOADON" Relationship="Self.FK__CHITIETHD__MAHOA__5BE2A6F2" FromRole="CHITIETHD" ToRole="HOADON" />
+  </EntityType>
+  <EntityType Name="HOADON">
+    <Key>
+      <PropertyRef Name="MAHOADON" />
+    </Key>
+    <Property Name="MAHOADON" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="NGAYDATHANG" Type="DateTime" Precision="0" />
+    <Property Name="NGAYGIAOHANG" Type="DateTime" Precision="0" />
+    <Property Name="TONGTIEN" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TINHTRANGGIAOHANG" Type="Int32" />
+    <Property Name="MAKHACHHANG" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="CHITIETHDs" Relationship="Self.FK__CHITIETHD__MAHOA__5BE2A6F2" FromRole="HOADON" ToRole="CHITIETHD" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__HOADON__MAKHACHH__59063A47" FromRole="HOADON" ToRole="KHACHHANG" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="MAKHACHHANG" />
+    </Key>
+    <Property Name="MAKHACHHANG" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TENKHACHHANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYSINH" Type="DateTime" Precision="0" />
+    <Property Name="GIOITINH" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="SODIENTHOAI" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TAIKHOAN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MATKHAU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HOADONs" Relationship="Self.FK__HOADON__MAKHACHH__59063A47" FromRole="KHACHHANG" ToRole="HOADON" />
+  </EntityType>
+  <EntityType Name="LOAIXE">
+    <Key>
+      <PropertyRef Name="MALOAIXE" />
+    </Key>
+    <Property Name="MALOAIXE" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TENLOAIXE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="XEMAYs" Relationship="Self.FK__XEMAY__MALOAIXE__4F7CD00D" FromRole="LOAIXE" ToRole="XEMAY" />
+  </EntityType>
+  <EntityType Name="NCC_XEMAY">
+    <Key>
+      <PropertyRef Name="MACC_XEMAY" />
+    </Key>
+    <Property Name="MACC_XEMAY" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="MAXE" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MANCC" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="CHITIETHDs" Relationship="Self.FK__CHITIETHD__MACC___5CD6CB2B" FromRole="NCC_XEMAY" ToRole="CHITIETHD" />
+    <NavigationProperty Name="NHACUNGCAP" Relationship="Self.FK__NCC_XEMAY__MANCC__5441852A" FromRole="NCC_XEMAY" ToRole="NHACUNGCAP" />
+    <NavigationProperty Name="XEMAY" Relationship="Self.FK__NCC_XEMAY__MAXE__534D60F1" FromRole="NCC_XEMAY" ToRole="XEMAY" />
+  </EntityType>
+  <EntityType Name="NHACUNGCAP">
+    <Key>
+      <PropertyRef Name="MANCC" />
+    </Key>
+    <Property Name="MANCC" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TENNCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SODIENTHOAI" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="NCC_XEMAY" Relationship="Self.FK__NCC_XEMAY__MANCC__5441852A" FromRole="NHACUNGCAP" ToRole="NCC_XEMAY" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="THUONGHIEUXE">
+    <Key>
+      <PropertyRef Name="MATHUONGHIEU" />
+    </Key>
+    <Property Name="MATHUONGHIEU" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TENTHUONGHIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="XEMAYs" Relationship="Self.FK__XEMAY__MATHUONGH__5070F446" FromRole="THUONGHIEUXE" ToRole="XEMAY" />
+  </EntityType>
+  <EntityType Name="XEMAY">
+    <Key>
+      <PropertyRef Name="MAXEMAY" />
+    </Key>
+    <Property Name="MAXEMAY" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TENXEMAY" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYSANXUAT" Type="DateTime" Precision="0" />
+    <Property Name="THOIGIANBAOHANH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="GIABANXE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MALOAIXE" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MATHUONGHIEU" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="HINHANH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LOAIXE" Relationship="Self.FK__XEMAY__MALOAIXE__4F7CD00D" FromRole="XEMAY" ToRole="LOAIXE" />
+    <NavigationProperty Name="NCC_XEMAY" Relationship="Self.FK__NCC_XEMAY__MAXE__534D60F1" FromRole="XEMAY" ToRole="NCC_XEMAY" />
+    <NavigationProperty Name="THUONGHIEUXE" Relationship="Self.FK__XEMAY__MATHUONGH__5070F446" FromRole="XEMAY" ToRole="THUONGHIEUXE" />
+  </EntityType>
+  <Association Name="FK__CHITIETHD__MACC___5CD6CB2B">
+    <End Role="NCC_XEMAY" Type="Self.NCC_XEMAY" Multiplicity="1" />
+    <End Role="CHITIETHD" Type="Self.CHITIETHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NCC_XEMAY">
+        <PropertyRef Name="MACC_XEMAY" />
+      </Principal>
+      <Dependent Role="CHITIETHD">
+        <PropertyRef Name="MACC_XEMAY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CHITIETHD__MAHOA__5BE2A6F2">
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
+    <End Role="CHITIETHD" Type="Self.CHITIETHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOADON">
+        <PropertyRef Name="MAHOADON" />
+      </Principal>
+      <Dependent Role="CHITIETHD">
+        <PropertyRef Name="MAHOADON" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HOADON__MAKHACHH__59063A47">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MAKHACHHANG" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="MAKHACHHANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__XEMAY__MALOAIXE__4F7CD00D">
+    <End Role="LOAIXE" Type="Self.LOAIXE" Multiplicity="0..1" />
+    <End Role="XEMAY" Type="Self.XEMAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIXE">
+        <PropertyRef Name="MALOAIXE" />
+      </Principal>
+      <Dependent Role="XEMAY">
+        <PropertyRef Name="MALOAIXE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NCC_XEMAY__MANCC__5441852A">
+    <End Role="NHACUNGCAP" Type="Self.NHACUNGCAP" Multiplicity="0..1" />
+    <End Role="NCC_XEMAY" Type="Self.NCC_XEMAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGCAP">
+        <PropertyRef Name="MANCC" />
+      </Principal>
+      <Dependent Role="NCC_XEMAY">
+        <PropertyRef Name="MANCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NCC_XEMAY__MAXE__534D60F1">
+    <End Role="XEMAY" Type="Self.XEMAY" Multiplicity="0..1" />
+    <End Role="NCC_XEMAY" Type="Self.NCC_XEMAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XEMAY">
+        <PropertyRef Name="MAXEMAY" />
+      </Principal>
+      <Dependent Role="NCC_XEMAY">
+        <PropertyRef Name="MAXE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__XEMAY__MATHUONGH__5070F446">
+    <End Role="THUONGHIEUXE" Type="Self.THUONGHIEUXE" Multiplicity="0..1" />
+    <End Role="XEMAY" Type="Self.XEMAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THUONGHIEUXE">
+        <PropertyRef Name="MATHUONGHIEU" />
+      </Principal>
+      <Dependent Role="XEMAY">
+        <PropertyRef Name="MATHUONGHIEU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QL_XEMAYEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CHITIETHDs" EntityType="Self.CHITIETHD" />
+    <EntitySet Name="HOADONs" EntityType="Self.HOADON" />
+    <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+    <EntitySet Name="LOAIXEs" EntityType="Self.LOAIXE" />
+    <EntitySet Name="NCC_XEMAY" EntityType="Self.NCC_XEMAY" />
+    <EntitySet Name="NHACUNGCAPs" EntityType="Self.NHACUNGCAP" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="THUONGHIEUXEs" EntityType="Self.THUONGHIEUXE" />
+    <EntitySet Name="XEMAYs" EntityType="Self.XEMAY" />
+    <AssociationSet Name="FK__CHITIETHD__MACC___5CD6CB2B" Association="Self.FK__CHITIETHD__MACC___5CD6CB2B">
+      <End Role="NCC_XEMAY" EntitySet="NCC_XEMAY" />
+      <End Role="CHITIETHD" EntitySet="CHITIETHDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CHITIETHD__MAHOA__5BE2A6F2" Association="Self.FK__CHITIETHD__MAHOA__5BE2A6F2">
+      <End Role="HOADON" EntitySet="HOADONs" />
+      <End Role="CHITIETHD" EntitySet="CHITIETHDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HOADON__MAKHACHH__59063A47" Association="Self.FK__HOADON__MAKHACHH__59063A47">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="HOADON" EntitySet="HOADONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__XEMAY__MALOAIXE__4F7CD00D" Association="Self.FK__XEMAY__MALOAIXE__4F7CD00D">
+      <End Role="LOAIXE" EntitySet="LOAIXEs" />
+      <End Role="XEMAY" EntitySet="XEMAYs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NCC_XEMAY__MANCC__5441852A" Association="Self.FK__NCC_XEMAY__MANCC__5441852A">
+      <End Role="NHACUNGCAP" EntitySet="NHACUNGCAPs" />
+      <End Role="NCC_XEMAY" EntitySet="NCC_XEMAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NCC_XEMAY__MAXE__534D60F1" Association="Self.FK__NCC_XEMAY__MAXE__534D60F1">
+      <End Role="XEMAY" EntitySet="XEMAYs" />
+      <End Role="NCC_XEMAY" EntitySet="NCC_XEMAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK__XEMAY__MATHUONGH__5070F446" Association="Self.FK__XEMAY__MATHUONGH__5070F446">
+      <End Role="THUONGHIEUXE" EntitySet="THUONGHIEUXEs" />
+      <End Role="XEMAY" EntitySet="XEMAYs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+<body>
+    <div>
+
+
+        <section class="menu clearfix bg-white">
+            @RenderPage("/Views/Share/menu.cshtml")
+        </section>
+
+
+
+        <section class="slide clearfix bg-white" style="background: #04064f; width: 100%;">
+            <div class="d-flex justify-content-between w-100 py-2">
+                @RenderPage("/Views/Share/slide.cshtml")
+            </div>
+            <div style="width: 112%;height:auto">
+                @RenderBody()
+            </div>
+        </section>
+
+
+        <section class="footer clearfix bg-success">
+            @RenderPage("/Views/Share/footer.cshtml")
+        </section>
+
+
+    </div>
+</body>
+</html>

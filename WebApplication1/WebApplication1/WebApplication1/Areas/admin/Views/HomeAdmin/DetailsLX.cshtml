@@ -1,0 +1,33 @@
+﻿@model WebApplication1.Models.LOAIXE
+
+@{
+    ViewBag.Title = "DetailsLX";
+    Layout = "~/Areas/admin/Views/Shared/user-admin.cshtml";
+}
+
+
+
+<div>
+    <h4>LOAIXE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MALOAIXE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MALOAIXE)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TENLOAIXE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENLOAIXE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "IndexLoaiXe")
+</p>

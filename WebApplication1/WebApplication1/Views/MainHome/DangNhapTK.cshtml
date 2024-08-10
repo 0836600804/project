@@ -1,0 +1,154 @@
+﻿
+
+@{
+    ViewBag.Title = "DangNhapTK";
+    Layout = "~/Views/ViewShareDangNhap.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="~/Content/css/login.css">
+    <!-- Add a link to your favorite icon library (e.g., Font Awesome) for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #f1f1f1;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+
+        .txt_field {
+            position: relative;
+            margin: 50px 0;
+        }
+
+            .txt_field input {
+                border: none;
+                border-bottom: 2px solid #333;
+                outline: none;
+                height: 40px;
+                width: 300px;
+                font-size: 16px;
+                transition: all 0.3s ease;
+            }
+
+            .txt_field label {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 16px;
+                color: #999;
+                pointer-events: none;
+                transition: all 0.3s ease;
+            }
+
+            .txt_field input:focus ~ label,
+            .txt_field input:valid ~ label {
+                top: -5px;
+                font-size: 12px;
+                color: #333;
+            }
+
+        .pass {
+            color: #3498db;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+            .pass:hover {
+                color: #333;
+            }
+
+        input[type="submit"] {
+            border: none;
+            outline: none;
+            height: 40px;
+            width: 200px;
+            background: #3498db;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+            input[type="submit"]:hover {
+                background: #333;
+            }
+
+        .signup_link {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #666;
+        }
+
+            .signup_link a {
+                color: #3498db;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+                .signup_link a:hover {
+                    color: #333;
+                }
+    </style>
+</head>
+<body>
+
+    <div class="center">
+        <h1>ĐĂNG NHẬP</h1>
+        <h4 style="color:red; font-style:italic"> @ViewBag.Thongbao </h4>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <form>
+                <div class="txt_field">
+                    @ViewData["Loi1"]
+                    <label for="TenDN">Tên đăng nhập... <i class="fas fa-user"></i></label>
+                    <br /><br /><br />
+                    <input type="text" id="TenDN" name="TenDN" required>
+                </div>
+                <div class="txt_field">
+                    @ViewData["Loi2"]
+                    <label for="MatKhau">Mật khẩu... <i class="fas fa-lock"></i></label>
+                    <br /><br /><br />
+                    <input type="password" id="MatKhau" name="MatKhau" required>
+                </div>
+                <div class="pass">Quên mật khẩu?</div>
+                <input type="submit" value="Đăng Nhập">
+                <div class="signup_link">
+                    
+                    Không có tài khoản? <a href="~/MainHome/DangKyTK">Đăng Ký</a>
+                </div>
+            </form>
+        }
+    </div>
+</body>
+</html>
+
+

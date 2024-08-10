@@ -1,0 +1,63 @@
+﻿.container-fluid {
+    background-color: #f8f9fa; /* Màu nền của container */
+}
+
+.navbar {
+    padding: 20px; /* Khoảng cách giữa các phần của navbar */
+}
+
+.navbar-brand img {
+    max-height: 50px; /* Điều chỉnh chiều cao của logo */
+}
+
+.navbar-nav .nav-item {
+    margin-top: 50px;
+    margin-right: 25px; /* Khoảng cách giữa các mục menu */
+}
+
+.navbar-text {
+    
+    font-size: 18px;
+    /* Kích thước chữ cho phần đăng ký/đăng nhập */
+}
+
+    /* Thiết lập đóng khung cho phần đăng ký/đăng nhập */
+.navbar-text a {
+        border: 1px solid #007bff;
+        padding: 8px 15px;
+        margin-top: 50px;
+        border-radius: 5px;
+        margin-left: 10px;
+    }
+
+.nav-link {
+    font-size: 18px; /* Kích thước chữ cho các mục menu */
+}
+
+    /* Hiệu ứng hover cho các mục menu */
+.nav-link:hover {
+        color: #007bff;
+    }
+
+/* Chỉnh vị trí của các phần */
+@media (min-width: 992px) {
+    .navbar-text {
+        margin-top: 10px; /* Khoảng cách giữa menu và phần đăng ký/đăng nhập trên màn hình lớn hơn hoặc bằng 992px */
+    }
+}
+
+.logo img {
+    max-width: 100%; /* Đảm bảo logo không bị tràn ra khỏi container */
+}
+.navbar-nav .nav-link,
+.navbar-text a {
+    color: #dc3545; /* Màu chữ đỏ đậm */
+    font-weight: bold; /* In đậm chữ */
+}
+
+    /* Hiệu ứng hover cho các mục menu */
+    .navbar-nav .nav-link:hover,
+    .navbar-text a:hover {
+        color: #dc3545; /* Màu chữ đỏ đậm khi di chuột qua */
+    }
+

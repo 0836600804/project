@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebApplication1.Models.XEMAY>
+
+@{
+    ViewBag.Title = "XeMay8xemay";
+    Layout = "~/Views/Share/_LayoutMain.cshtml";
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+<div class="row">
+    @{
+        foreach (var item in Model)
+        {
+            <div class="col-3">
+                <img src="~/Image/@item.HINHANH" width="70%" height="65%" />
+                @if (item.TENXEMAY.Length > 30)
+                {
+                    <p>
+                        Tên Xe: <b>@item.TENXEMAY.Substring(0, 30)</b>
+                    </p>
+
+                }
+                else
+                {
+                    <p style="color:darkblue">
+                        Tên Xe Máy: <b style="color:black">@item.TENXEMAY</b> <br />
+                        Giá bán: <b style="color:black">@string.Format("{0:0,0}", item.GIABANXE)</b> VNĐ <br />
+
+                    </p>
+                }
+            </div>
+
+        }
+    }
+</div>

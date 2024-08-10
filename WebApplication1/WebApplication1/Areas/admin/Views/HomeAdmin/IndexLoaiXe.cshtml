@@ -1,0 +1,72 @@
+﻿@*@model IEnumerable<WebApplication1.Models.LOAIXE>
+
+    @{
+        ViewBag.Title = "IndexLoaiXe";
+        Layout = "~/Areas/admin/Views/Shared/user-admin.cshtml";
+    }
+
+    <h2>Chỉnh sửa thông tin loại xe</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "CreateLX")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TENLOAIXE)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENLOAIXE)
+            </td>
+            <td>
+                @Html.ActionLink("Cập Nhật", "EditLX", new { id=item.MALOAIXE.Trim() }) |
+                @Html.ActionLink("Xem chi tiết", "DetailsLX", new { id = item.MALOAIXE.Trim() }) |
+                @Html.ActionLink("Xóa", "DeleteLX", new { id=item.MALOAIXE.Trim() })
+            </td>
+        </tr>
+    }
+
+    </table>*@
+@using WebApplication1.Models
+@model List<XEMAY>
+@{
+    ViewBag.Title = "IndexLoaiXe";
+    Layout = "~/Areas/admin/Views/Shared/user-admin.cshtml";
+}
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col">
+        <h3><a href="#">Thêm sản phẩm mới</a></h3>
+    </div>
+
+</div>
+<table class="table">
+    <tr>
+        <th>Mã Xe</th>
+        <th>Tên Xe Máy</th>
+        <th>Hình Ảnh</th>
+        <th>Đơn Giá</th>
+        <th>Thương Hiệu</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+
+    {
+        <tr>
+            <td>@item.MAXEMAY</td>
+            <td>@item.TENXEMAY</td>
+            <td><img src="~/Image/@item.HINHANH" / style="height:100px;width:125px"></td>
+            <td>@item.GIABANXE</td>
+            <td>@item.THUONGHIEUXE.TENTHUONGHIEU</td>
+            <td><a href="#">Xóa mặt hàng</a></td>
+            <td><a href="#">Sửa</a></td>
+        </tr>
+    }
+
+</table>

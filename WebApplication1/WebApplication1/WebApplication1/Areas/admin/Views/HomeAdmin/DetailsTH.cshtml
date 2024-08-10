@@ -1,0 +1,32 @@
+﻿@model WebApplication1.Models.THUONGHIEUXE
+
+@{
+    ViewBag.Title = "DetailsTH";
+    Layout = "~/Areas/admin/Views/Shared/user-admin.cshtml";
+}
+
+<div>
+    <h4>THUONG HIEU XE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MATHUONGHIEU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MATHUONGHIEU)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TENTHUONGHIEU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENTHUONGHIEU)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    
+    @Html.ActionLink("Back to List", "IndexTHUONGHIEU")
+</p>

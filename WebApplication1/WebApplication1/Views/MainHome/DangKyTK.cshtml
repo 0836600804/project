@@ -1,0 +1,163 @@
+﻿
+@model WebApplication1.Models.KHACHHANG
+
+@{
+    ViewBag.Title = "DangKyTK";
+    Layout = "~/Views/ViewShareDangNhap.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="~/Content/css/login.css">
+    <!-- Add a link to your favorite icon library (e.g., Font Awesome) for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #f1f1f1;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+
+        .txt_field {
+            position: relative;
+            margin: 0px 0;
+        }
+
+            .txt_field label {
+                display: block;
+                text-align: left;
+                margin-bottom: 5px;
+                color: #333;
+                font-size: 12px;
+            }
+
+            .txt_field input {
+                border: none;
+                border-bottom: 2px solid #333;
+                outline: none;
+                height: 20px;
+                width: 300px;
+                font-size: 16px;
+                transition: all 0.3s ease;
+                margin-left: 5px; /* Added margin for better alignment */
+            }
+
+                .txt_field input:focus ~ label,
+                .txt_field input:valid ~ label {
+                    top: -15px;
+                    font-size: 12px;
+                    color: #333;
+                }
+
+        input[type="submit"] {
+            border: none;
+            outline: none;
+            height: 40px;
+            width: 200px;
+            background: #3498db;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+            input[type="submit"]:hover {
+                background: #333;
+            }
+
+        .signup_link {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #666;
+        }
+
+            .signup_link a {
+                color: #3498db;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+                .signup_link a:hover {
+                    color: #333;
+                }
+    </style>
+</head>
+<body>
+
+    <div class="center" style="font-size:x-large">
+        <h1>ĐĂNG KÝ TÀI KHOẢN</h1>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <form>
+                <div class="txt_field">
+                    <label> Mã Khách Hàng</label>
+                    @Html.EditorFor(model => model.MAKHACHHANG, new { htmlAttributes = new { @class = "form-control" } })
+
+                </div>
+                <div class="txt_field">
+                    <label>Tên Khách Hàng</label>
+                    @Html.EditorFor(model => model.TENKHACHHANG, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <div class="txt_field">
+                    <label>Ngày Sinh</label>
+                    @Html.EditorFor(model => model.NGAYSINH, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <div class="txt_field">
+                    <label>Giới Tính</label>
+                    @Html.EditorFor(model => model.GIOITINH, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <div class="txt_field">
+                    <label>Số Điện Thoại</label>
+                    @Html.EditorFor(model => model.SODIENTHOAI, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <div class="txt_field">
+                    <label>Tài Khoản</label>
+                    @Html.EditorFor(model => model.TAIKHOAN, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <div class="txt_field">
+                    <label>Mật Khẩu</label>
+                    @Html.EditorFor(model => model.MATKHAU, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <div class="txt_field">
+                    <label>Email</label>
+                    @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <div class="txt_field">
+                    <label>Địa Chỉ</label>
+                    @Html.EditorFor(model => model.DIACHI, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                <input type="submit" value="Đăng Ký">
+                <div class="signup_link">
+                    Đã có tài khoản? <a href="~/MainHome/DangNhapTK">Đăng Nhập</a>
+                </div>
+            </form>
+        }
+    </div>
+</body>
+</html>

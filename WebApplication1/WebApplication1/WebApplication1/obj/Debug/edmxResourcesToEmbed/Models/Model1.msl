@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QL_XEMAYModelStoreContainer" CdmEntityContainer="QL_XEMAYEntities">
+    <EntitySetMapping Name="CHITIETHD">
+      <EntityTypeMapping TypeName="QL_XEMAYModel.CHITIETHD">
+        <MappingFragment StoreEntitySet="CHITIETHD">
+          <ScalarProperty Name="MAHOADON" ColumnName="MAHOADON" />
+          <ScalarProperty Name="MACC_XEMAY" ColumnName="MACC_XEMAY" />
+          <ScalarProperty Name="SOLUONGMUA" ColumnName="SOLUONGMUA" />
+          <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOADON">
+      <EntityTypeMapping TypeName="QL_XEMAYModel.HOADON">
+        <MappingFragment StoreEntitySet="HOADON">
+          <ScalarProperty Name="MAHOADON" ColumnName="MAHOADON" />
+          <ScalarProperty Name="NGAYDATHANG" ColumnName="NGAYDATHANG" />
+          <ScalarProperty Name="NGAYGIAOHANG" ColumnName="NGAYGIAOHANG" />
+          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+          <ScalarProperty Name="TINHTRANGGIAOHANG" ColumnName="TINHTRANGGIAOHANG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHACHHANG">
+      <EntityTypeMapping TypeName="QL_XEMAYModel.KHACHHANG">
+        <MappingFragment StoreEntitySet="KHACHHANG">
+          <ScalarProperty Name="MAKHACHHANG" ColumnName="MAKHACHHANG" />
+          <ScalarProperty Name="TENKHACHHANG" ColumnName="TENKHACHHANG" />
+          <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+          <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+          <ScalarProperty Name="SODIENTHOAI" ColumnName="SODIENTHOAI" />
+          <ScalarProperty Name="TAIKHOAN" ColumnName="TAIKHOAN" />
+          <ScalarProperty Name="MATKHAU" ColumnName="MATKHAU" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAIXE">
+      <EntityTypeMapping TypeName="QL_XEMAYModel.LOAIXE">
+        <MappingFragment StoreEntitySet="LOAIXE">
+          <ScalarProperty Name="MALOAIXE" ColumnName="MALOAIXE" />
+          <ScalarProperty Name="TENLOAIXE" ColumnName="TENLOAIXE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NCC_XEMAY">
+      <EntityTypeMapping TypeName="QL_XEMAYModel.NCC_XEMAY">
+        <MappingFragment StoreEntitySet="NCC_XEMAY">
+          <ScalarProperty Name="MACC_XEMAY" ColumnName="MACC_XEMAY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHACUNGCAP">
+      <EntityTypeMapping TypeName="QL_XEMAYModel.NHACUNGCAP">
+        <MappingFragment StoreEntitySet="NHACUNGCAP">
+          <ScalarProperty Name="MANCC" ColumnName="MANCC" />
+          <ScalarProperty Name="TENNCC" ColumnName="TENNCC" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="SODIENTHOAI" ColumnName="SODIENTHOAI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="THUONGHIEUXE">
+      <EntityTypeMapping TypeName="QL_XEMAYModel.THUONGHIEUXE">
+        <MappingFragment StoreEntitySet="THUONGHIEUXE">
+          <ScalarProperty Name="MATHUONGHIEU" ColumnName="MATHUONGHIEU" />
+          <ScalarProperty Name="TENTHUONGHIEU" ColumnName="TENTHUONGHIEU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XEMAY">
+      <EntityTypeMapping TypeName="QL_XEMAYModel.XEMAY">
+        <MappingFragment StoreEntitySet="XEMAY">
+          <ScalarProperty Name="MAXEMAY" ColumnName="MAXEMAY" />
+          <ScalarProperty Name="TENXEMAY" ColumnName="TENXEMAY" />
+          <ScalarProperty Name="NGAYSANXUAT" ColumnName="NGAYSANXUAT" />
+          <ScalarProperty Name="THOIGIANBAOHANH" ColumnName="THOIGIANBAOHANH" />
+          <ScalarProperty Name="GIABANXE" ColumnName="GIABANXE" />
+          <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__HOADON__MAKHACHH__1FCDBCEB" TypeName="QL_XEMAYModel.FK__HOADON__MAKHACHH__1FCDBCEB" StoreEntitySet="HOADON">
+      <EndProperty Name="KHACHHANG">
+        <ScalarProperty Name="MAKHACHHANG" ColumnName="MAKHACHHANG" />
+      </EndProperty>
+      <EndProperty Name="HOADON">
+        <ScalarProperty Name="MAHOADON" ColumnName="MAHOADON" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="MAKHACHHANG" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__XEMAY__MALOAIXE__164452B1" TypeName="QL_XEMAYModel.FK__XEMAY__MALOAIXE__164452B1" StoreEntitySet="XEMAY">
+      <EndProperty Name="LOAIXE">
+        <ScalarProperty Name="MALOAIXE" ColumnName="MALOAIXE" />
+      </EndProperty>
+      <EndProperty Name="XEMAY">
+        <ScalarProperty Name="MAXEMAY" ColumnName="MAXEMAY" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="MALOAIXE" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__NCC_XEMAY__MANCC__1B0907CE" TypeName="QL_XEMAYModel.FK__NCC_XEMAY__MANCC__1B0907CE" StoreEntitySet="NCC_XEMAY">
+      <EndProperty Name="NHACUNGCAP">
+        <ScalarProperty Name="MANCC" ColumnName="MANCC" />
+      </EndProperty>
+      <EndProperty Name="NCC_XEMAY">
+        <ScalarProperty Name="MACC_XEMAY" ColumnName="MACC_XEMAY" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="MANCC" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__NCC_XEMAY__MAXE__1A14E395" TypeName="QL_XEMAYModel.FK__NCC_XEMAY__MAXE__1A14E395" StoreEntitySet="NCC_XEMAY">
+      <EndProperty Name="XEMAY">
+        <ScalarProperty Name="MAXEMAY" ColumnName="MAXE" />
+      </EndProperty>
+      <EndProperty Name="NCC_XEMAY">
+        <ScalarProperty Name="MACC_XEMAY" ColumnName="MACC_XEMAY" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="MAXE" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__XEMAY__MATHUONGH__173876EA" TypeName="QL_XEMAYModel.FK__XEMAY__MATHUONGH__173876EA" StoreEntitySet="XEMAY">
+      <EndProperty Name="THUONGHIEUXE">
+        <ScalarProperty Name="MATHUONGHIEU" ColumnName="MATHUONGHIEU" />
+      </EndProperty>
+      <EndProperty Name="XEMAY">
+        <ScalarProperty Name="MAXEMAY" ColumnName="MAXEMAY" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="MATHUONGHIEU" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

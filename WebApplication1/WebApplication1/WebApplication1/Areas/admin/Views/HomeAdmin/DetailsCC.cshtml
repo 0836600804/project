@@ -1,0 +1,42 @@
+﻿@model WebApplication1.Models.NHACUNGCAP
+
+@{
+    ViewBag.Title = "DetailsCC";
+    Layout = "~/Areas/admin/Views/Shared/user-admin.cshtml";
+}
+
+
+<div>
+    <h4>NHACUNGCAP</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENNCC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENNCC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DIACHI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIACHI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SODIENTHOAI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SODIENTHOAI)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    @Html.ActionLink("Back to List", "IndexCungCap")
+</p>

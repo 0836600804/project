@@ -1,0 +1,65 @@
+﻿@model WebApplication1.Models.HOADON
+
+@{
+    ViewBag.Title = "DetailsHD";
+    Layout = "~/Areas/admin/Views/Shared/user-admin.cshtml";
+}
+
+
+
+<div>
+    <h4>HOADON</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <th>
+            @Html.DisplayNameFor(model => model.MAHOADON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAHOADON)
+        </th>
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYDATHANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYDATHANG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYGIAOHANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYGIAOHANG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TONGTIEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TONGTIEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TINHTRANGGIAOHANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TINHTRANGGIAOHANG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAKHACHHANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAKHACHHANG)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MAHOADON }) |
+    @Html.ActionLink("Back to List", "IndexHoaDon")
+</p>

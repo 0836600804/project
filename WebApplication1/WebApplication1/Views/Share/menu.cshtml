@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css"> 
+    <title>Menu Example</title>
+</head>
+<body>
+
+    <form role="search" method="post" action="~/XeMay/timXeMay" style="background-color:lightgray">
+        <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+            <div class="container-fluid">
+                <button data-mdb-collapse-init
+                        class="navbar-toggler"
+                        type="button"
+                        data-mdb-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <a class="navbar-brand mt-2 mt-lg-0" style="font-size: 30px;" href="#" />MYBIKE</a>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/MainHome/XeMayMain">TRANG CHỦ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">TIN TỨC</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <ul class="navbar-nav" style="font-size:15px;width:300px;">
+                <li class="nav-item" style="width:90px">
+                    <a class="nav-link" href="~/MainHome/DangKyTK">Đăng ký</a>
+                </li>
+                <li class="nav-item" style="width:140px">
+                    <a class="nav-link" href="~/MainHome/DangNhapTK" style="margin-right:50px">Đăng nhập</a>
+                </li>
+
+            </ul>
+
+            <form class="d-flex" role="search">
+                <input class="form-control w-50 me-2" type="search" placeholder="Nhập từ khóa cần tìm kiếm..." name="txt_Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+
+        </nav>
+    </form>
+
+</body>
+</html>

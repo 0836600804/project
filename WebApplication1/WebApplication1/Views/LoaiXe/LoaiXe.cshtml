@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WebApplication1.Models.LOAIXE>
+
+<ul class="list-group list-group-flush text-left mt-2" style="border: 1px solid black; border-radius: 0px;">
+    <li class="list-group-item" style="background-color:white;">
+        <a href="#" data-toggle="collapse" data-target="#loaiXeMay" aria-expanded="false" aria-controls="loaiXeMay" style="text-transform:uppercase; text-decoration:none; color:black; font-weight:bold;">Loại Xe Máy</a>
+        <div id="loaiXeMay" class="collapse" style="color:black;">
+            @foreach (var item in Model)
+            {
+                <a href="@Url.Action("XeMayTheoLoai", "XeMay", new { MaLoai=item.MALOAIXE })" class="list-group-item">@item.TENLOAIXE</a>
+            }
+        </div>
+    </li>
+</ul>
+
+<script>
+    $(document).ready(function () {
+        $('#loaiXeMay').on('show.bs.collapse', function () {
+            $('[data-target="#loaiXeMay"]').attr('aria-expanded', 'true');
+        });
+
+        $('#loaiXeMay').on('hide.bs.collapse', function () {
+            $('[data-target="#loaiXeMay"]').attr('aria-expanded', 'false');
+        });
+    });
+</script>

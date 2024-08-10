@@ -1,0 +1,90 @@
+﻿@model IEnumerable<WebApplication1.Models.KHACHHANG>
+
+
+@{
+    ViewBag.Title = "IndexKhachHang";
+    Layout = "~/Areas/admin/Views/Shared/user-admin.cshtml";
+}
+
+
+<p>
+
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.MAKHACHHANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TENKHACHHANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYSINH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GIOITINH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SODIENTHOAI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TAIKHOAN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MATKHAU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIACHI)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MAKHACHHANG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENKHACHHANG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYSINH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GIOITINH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SODIENTHOAI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TAIKHOAN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MATKHAU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMAIL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIACHI)
+            </td>
+            <td>
+                @Html.ActionLink("Cập Nhật", "EditKH", new { id = item.MAKHACHHANG.Trim() })
+            </td>
+            <td>
+                @Html.ActionLink("Xem chi tiết", "DetailsKH", new { id = item.MAKHACHHANG.Trim() })
+            </td>
+            <td>
+                @Html.ActionLink("Xóa", "DeleteKH", new { id = item.MAKHACHHANG.Trim() })
+            </td>
+        </tr>
+    }
+    <br />
+
+</table>

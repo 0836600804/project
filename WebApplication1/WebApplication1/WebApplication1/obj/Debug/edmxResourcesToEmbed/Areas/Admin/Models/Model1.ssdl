@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QL_XEMAYModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CHITIETHD">
+    <Key>
+      <PropertyRef Name="MAHOADON" />
+      <PropertyRef Name="MACC_XEMAY" />
+    </Key>
+    <Property Name="MAHOADON" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="MACC_XEMAY" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="SOLUONGMUA" Type="int" />
+    <Property Name="DONGIA" Type="money" />
+  </EntityType>
+  <EntityType Name="HOADON">
+    <Key>
+      <PropertyRef Name="MAHOADON" />
+    </Key>
+    <Property Name="MAHOADON" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="NGAYDATHANG" Type="date" />
+    <Property Name="NGAYGIAOHANG" Type="date" />
+    <Property Name="TONGTIEN" Type="money" />
+    <Property Name="TINHTRANGGIAOHANG" Type="int" />
+    <Property Name="MAKHACHHANG" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="MAKHACHHANG" />
+    </Key>
+    <Property Name="MAKHACHHANG" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="TENKHACHHANG" Type="nvarchar" MaxLength="50" />
+    <Property Name="NGAYSINH" Type="date" />
+    <Property Name="GIOITINH" Type="nvarchar" MaxLength="5" />
+    <Property Name="SODIENTHOAI" Type="nchar" MaxLength="10" />
+    <Property Name="TAIKHOAN" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MATKHAU" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="30" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="LOAIXE">
+    <Key>
+      <PropertyRef Name="MALOAIXE" />
+    </Key>
+    <Property Name="MALOAIXE" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="TENLOAIXE" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="NCC_XEMAY">
+    <Key>
+      <PropertyRef Name="MACC_XEMAY" />
+    </Key>
+    <Property Name="MACC_XEMAY" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="MAXE" Type="nchar" MaxLength="10" />
+    <Property Name="MANCC" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="NHACUNGCAP">
+    <Key>
+      <PropertyRef Name="MANCC" />
+    </Key>
+    <Property Name="MANCC" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="TENNCC" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="50" />
+    <Property Name="SODIENTHOAI" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="THUONGHIEUXE">
+    <Key>
+      <PropertyRef Name="MATHUONGHIEU" />
+    </Key>
+    <Property Name="MATHUONGHIEU" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="TENTHUONGHIEU" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="XEMAY">
+    <Key>
+      <PropertyRef Name="MAXEMAY" />
+    </Key>
+    <Property Name="MAXEMAY" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="TENXEMAY" Type="nvarchar" MaxLength="30" />
+    <Property Name="NGAYSANXUAT" Type="date" />
+    <Property Name="THOIGIANBAOHANH" Type="nvarchar" MaxLength="20" />
+    <Property Name="GIABANXE" Type="money" />
+    <Property Name="MALOAIXE" Type="nchar" MaxLength="10" />
+    <Property Name="MATHUONGHIEU" Type="nchar" MaxLength="10" />
+    <Property Name="HINHANH" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK__CHITIETHD__MACC___5CD6CB2B">
+    <End Role="NCC_XEMAY" Type="Self.NCC_XEMAY" Multiplicity="1" />
+    <End Role="CHITIETHD" Type="Self.CHITIETHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NCC_XEMAY">
+        <PropertyRef Name="MACC_XEMAY" />
+      </Principal>
+      <Dependent Role="CHITIETHD">
+        <PropertyRef Name="MACC_XEMAY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CHITIETHD__MAHOA__5BE2A6F2">
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
+    <End Role="CHITIETHD" Type="Self.CHITIETHD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOADON">
+        <PropertyRef Name="MAHOADON" />
+      </Principal>
+      <Dependent Role="CHITIETHD">
+        <PropertyRef Name="MAHOADON" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__HOADON__MAKHACHH__59063A47">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MAKHACHHANG" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="MAKHACHHANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NCC_XEMAY__MANCC__5441852A">
+    <End Role="NHACUNGCAP" Type="Self.NHACUNGCAP" Multiplicity="0..1" />
+    <End Role="NCC_XEMAY" Type="Self.NCC_XEMAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGCAP">
+        <PropertyRef Name="MANCC" />
+      </Principal>
+      <Dependent Role="NCC_XEMAY">
+        <PropertyRef Name="MANCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NCC_XEMAY__MAXE__534D60F1">
+    <End Role="XEMAY" Type="Self.XEMAY" Multiplicity="0..1" />
+    <End Role="NCC_XEMAY" Type="Self.NCC_XEMAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XEMAY">
+        <PropertyRef Name="MAXEMAY" />
+      </Principal>
+      <Dependent Role="NCC_XEMAY">
+        <PropertyRef Name="MAXE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__XEMAY__MALOAIXE__4F7CD00D">
+    <End Role="LOAIXE" Type="Self.LOAIXE" Multiplicity="0..1" />
+    <End Role="XEMAY" Type="Self.XEMAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIXE">
+        <PropertyRef Name="MALOAIXE" />
+      </Principal>
+      <Dependent Role="XEMAY">
+        <PropertyRef Name="MALOAIXE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__XEMAY__MATHUONGH__5070F446">
+    <End Role="THUONGHIEUXE" Type="Self.THUONGHIEUXE" Multiplicity="0..1" />
+    <End Role="XEMAY" Type="Self.XEMAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THUONGHIEUXE">
+        <PropertyRef Name="MATHUONGHIEU" />
+      </Principal>
+      <Dependent Role="XEMAY">
+        <PropertyRef Name="MATHUONGHIEU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QL_XEMAYModelStoreContainer">
+    <EntitySet Name="CHITIETHD" EntityType="Self.CHITIETHD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAIXE" EntityType="Self.LOAIXE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NCC_XEMAY" EntityType="Self.NCC_XEMAY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHACUNGCAP" EntityType="Self.NHACUNGCAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THUONGHIEUXE" EntityType="Self.THUONGHIEUXE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="XEMAY" EntityType="Self.XEMAY" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__CHITIETHD__MACC___5CD6CB2B" Association="Self.FK__CHITIETHD__MACC___5CD6CB2B">
+      <End Role="NCC_XEMAY" EntitySet="NCC_XEMAY" />
+      <End Role="CHITIETHD" EntitySet="CHITIETHD" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CHITIETHD__MAHOA__5BE2A6F2" Association="Self.FK__CHITIETHD__MAHOA__5BE2A6F2">
+      <End Role="HOADON" EntitySet="HOADON" />
+      <End Role="CHITIETHD" EntitySet="CHITIETHD" />
+    </AssociationSet>
+    <AssociationSet Name="FK__HOADON__MAKHACHH__59063A47" Association="Self.FK__HOADON__MAKHACHH__59063A47">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="HOADON" EntitySet="HOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NCC_XEMAY__MANCC__5441852A" Association="Self.FK__NCC_XEMAY__MANCC__5441852A">
+      <End Role="NHACUNGCAP" EntitySet="NHACUNGCAP" />
+      <End Role="NCC_XEMAY" EntitySet="NCC_XEMAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NCC_XEMAY__MAXE__534D60F1" Association="Self.FK__NCC_XEMAY__MAXE__534D60F1">
+      <End Role="XEMAY" EntitySet="XEMAY" />
+      <End Role="NCC_XEMAY" EntitySet="NCC_XEMAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK__XEMAY__MALOAIXE__4F7CD00D" Association="Self.FK__XEMAY__MALOAIXE__4F7CD00D">
+      <End Role="LOAIXE" EntitySet="LOAIXE" />
+      <End Role="XEMAY" EntitySet="XEMAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK__XEMAY__MATHUONGH__5070F446" Association="Self.FK__XEMAY__MATHUONGH__5070F446">
+      <End Role="THUONGHIEUXE" EntitySet="THUONGHIEUXE" />
+      <End Role="XEMAY" EntitySet="XEMAY" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

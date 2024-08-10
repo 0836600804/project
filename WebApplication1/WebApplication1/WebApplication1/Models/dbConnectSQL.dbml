@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_XEMAY" Class="dbConnectSQLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-LP4V836\SQLEXPRESS;Initial Catalog=QL_XEMAY;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QL_XEMAYConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CHITIETHD" Member="CHITIETHDs">
+    <Type Name="CHITIETHD">
+      <Column Name="MAHOADON" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MACC_XEMAY" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SOLUONGMUA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DONGIA" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="HOADON_CHITIETHD" Member="HOADON" ThisKey="MAHOADON" OtherKey="MAHOADON" Type="HOADON" IsForeignKey="true" />
+      <Association Name="NCC_XEMAY_CHITIETHD" Member="NCC_XEMAY" ThisKey="MACC_XEMAY" OtherKey="MACC_XEMAY" Type="NCC_XEMAY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.XEMAY" Member="XEMAYs">
+    <Type Name="XEMAY">
+      <Column Name="MAXEMAY" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENXEMAY" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="NGAYSANXUAT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="THOIGIANBAOHANH" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="GIABANXE" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="MALOAIXE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MATHUONGHIEU" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="HINHANH" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="XEMAY_NCC_XEMAY" Member="NCC_XEMAYs" ThisKey="MAXEMAY" OtherKey="MAXE" Type="NCC_XEMAY" />
+      <Association Name="LOAIXE_XEMAY" Member="LOAIXE" ThisKey="MALOAIXE" OtherKey="MALOAIXE" Type="LOAIXE" IsForeignKey="true" />
+      <Association Name="THUONGHIEUXE_XEMAY" Member="THUONGHIEUXE" ThisKey="MATHUONGHIEU" OtherKey="MATHUONGHIEU" Type="THUONGHIEUXE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HOADON" Member="HOADONs">
+    <Type Name="HOADON">
+      <Column Name="MAHOADON" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NGAYDATHANG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NGAYGIAOHANG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TONGTIEN" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TINHTRANGGIAOHANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MAKHACHHANG" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="HOADON_CHITIETHD" Member="CHITIETHDs" ThisKey="MAHOADON" OtherKey="MAHOADON" Type="CHITIETHD" />
+      <Association Name="KHACHHANG_HOADON" Member="KHACHHANG" ThisKey="MAKHACHHANG" OtherKey="MAKHACHHANG" Type="KHACHHANG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
+    <Type Name="KHACHHANG">
+      <Column Name="MAKHACHHANG" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENKHACHHANG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NGAYSINH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GIOITINH" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="SODIENTHOAI" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="TAIKHOAN" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MATKHAU" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="KHACHHANG_HOADON" Member="HOADONs" ThisKey="MAKHACHHANG" OtherKey="MAKHACHHANG" Type="HOADON" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAIXE" Member="LOAIXEs">
+    <Type Name="LOAIXE">
+      <Column Name="MALOAIXE" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENLOAIXE" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="LOAIXE_XEMAY" Member="XEMAYs" ThisKey="MALOAIXE" OtherKey="MALOAIXE" Type="XEMAY" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NCC_XEMAY" Member="NCC_XEMAYs">
+    <Type Name="NCC_XEMAY">
+      <Column Name="MACC_XEMAY" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAXE" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="MANCC" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="NCC_XEMAY_CHITIETHD" Member="CHITIETHDs" ThisKey="MACC_XEMAY" OtherKey="MACC_XEMAY" Type="CHITIETHD" />
+      <Association Name="XEMAY_NCC_XEMAY" Member="XEMAY" ThisKey="MAXE" OtherKey="MAXEMAY" Type="XEMAY" IsForeignKey="true" />
+      <Association Name="NHACUNGCAP_NCC_XEMAY" Member="NHACUNGCAP" ThisKey="MANCC" OtherKey="MANCC" Type="NHACUNGCAP" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NHACUNGCAP" Member="NHACUNGCAPs">
+    <Type Name="NHACUNGCAP">
+      <Column Name="MANCC" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENNCC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SODIENTHOAI" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="NHACUNGCAP_NCC_XEMAY" Member="NCC_XEMAYs" ThisKey="MANCC" OtherKey="MANCC" Type="NCC_XEMAY" />
+    </Type>
+  </Table>
+  <Table Name="dbo.THUONGHIEUXE" Member="THUONGHIEUXEs">
+    <Type Name="THUONGHIEUXE">
+      <Column Name="MATHUONGHIEU" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENTHUONGHIEU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="THUONGHIEUXE_XEMAY" Member="XEMAYs" ThisKey="MATHUONGHIEU" OtherKey="MATHUONGHIEU" Type="XEMAY" />
+    </Type>
+  </Table>
+</Database>

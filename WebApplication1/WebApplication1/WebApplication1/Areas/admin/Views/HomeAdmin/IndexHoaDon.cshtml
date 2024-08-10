@@ -1,0 +1,62 @@
+﻿@model IEnumerable<WebApplication1.Models.HOADON>
+
+@{
+    ViewBag.Title = "IndexHoaDon";
+    Layout = "~/Areas/admin/Views/Shared/user-admin.cshtml";
+}
+
+<h2>Hóa Đơn</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MAHOADON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAHOADON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYDATHANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYGIAOHANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TONGTIEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TINHTRANGGIAOHANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAKHACHHANG)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAYDATHANG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAYGIAOHANG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TONGTIEN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TINHTRANGGIAOHANG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAKHACHHANG)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditDH", new { id=item.MAHOADON.Trim() }) |
+            @Html.ActionLink("Details", "DetailsHD", new { id=item.MAHOADON.Trim() }) |
+           
+        </td>
+    </tr>
+}
+
+</table>

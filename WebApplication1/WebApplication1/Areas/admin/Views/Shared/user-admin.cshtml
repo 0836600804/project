@@ -1,0 +1,108 @@
+﻿
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofGJl5WzQq8DkWbx5uH56b3A5F/p5K5t" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .list-group-item {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="row" style=" background-color: #DCDCDC; ">
+        <div class="col-3"></div>
+        <div class="col-md-9">
+            <ul class=" nav navbar">
+                <li class=" nav-item">
+                    <a href="/HomeAdmin/XeMay8xemay" class="nav-link">Trang chủ</a>
+                </li>
+                <li class=" nav-item">
+                    <a href="~/admin/HomeAdmin/IndexCungCap" class="nav-link">Nhà cung cấp</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" href="#">
+                            Danh mục sản phẩm
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="~/admin/HomeAdmin/IndexLoaiXe">Danh mục xe</a>
+                            <a class="dropdown-item" href="~/admin/HomeAdmin/IndexTHUONGHIEU">Danh mục thương hiệu</a>
+                        </div>
+                    </div>
+                </li>
+                <li class=" nav-item">
+                    <a href="~/admin/HomeAdmin/IndexHoaDon" class="nav-link">Hóa đơn</a>
+                </li>
+                <li class=" nav-item">
+                    <a href="~/admin/HomeAdmin/IndexKhachHang" class="nav-link">Khách hàng</a>
+                </li>
+                <li class=" nav-item">
+                    <a href="/HomeAdmin/DangNhapTK" class="nav-link">Thoát</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <script src="~/bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+    <footer class="bg-dark text-white mt-5">
+        <div class="container py-4">
+            <div class="row" style="text-align:left;">
+                <div class="col-md-3">
+                    <h5>Liên hệ</h5>
+                    <p>Email: xemay@example.com</p>
+                    <p>Điện thoại: 0396 307 789</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Kết nối với chúng tôi</h5>
+                    <!-- Các biểu tượng (icons) có thể được thay thế bằng biểu tượng thực tế của bạn -->
+                    <a href="#" class="text-white mr-2">
+
+                        <img src="~/Image/footer/fb.png" style="width: 30px; height: 30px; " />
+                    </a>
+                    <a href="#" class="text-white mr-2">
+
+                        <img src="~/Image/footer/instagam.png" style="width:30px; height:30px;" />
+                    </a>
+                    <a href="#" class="text-white mr-2">
+                        <img src="~/Image/footer/icons8-tiktok-64.png" style="width: 30px; height: 30px;" />
+
+                    </a>
+
+                </div>
+                <div class="col-md-6">
+                    <h5></h5>
+                    <p>
+                        Tầng 17, 19, 20, 21 Tòa nhà Center Building - Hapulico Complex, Số 1 Nguyễn Huy Tưởng, Thanh Xuân, Hà Nội.<br />
+                        Giấy phép thiết lập trang thông tin điện tử tổng hợp trên mạng số 3713 /GP-TTĐT do Sở Thông tin và Truyền thông <br />
+                        thành phố Hà Nội cấp ngày 30 /11/2015.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </div>
+
+</body>
+</html>
+

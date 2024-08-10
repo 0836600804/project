@@ -1,0 +1,125 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mua Hàng</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="~/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .full-width-form {
+            width: 100%;
+            background-color: lightgray;
+        }
+
+        .navbar {
+            width: 100%;
+        }
+
+        .navbar-nav {
+            flex-direction: row;
+        }
+
+        .search-form {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .form-control {
+            width: 70%; 
+        }
+
+        .content {
+            min-height: 80vh;
+            padding-bottom: 2rem;
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="full-width-form">
+        <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+            <a class="navbar-brand mt-2 mt-lg-0" style="font-size: 30px;" href="#">MYBIKE</a>
+            <button data-mdb-collapse-init
+                    class="navbar-toggler"
+                    type="button"
+                    data-mdb-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/Index">TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/XeMay/XeMay">XE MÁY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">TIN TỨC</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="search-form">
+                <form class="d-flex w-100" role="search" method="post" action="~/XeMay/timXeMay">
+                    <input class="form-control me-2" type="search" placeholder="Nhập từ khóa cần tìm kiếm..." name="txt_Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <div class="content">
+        @RenderBody()
+    </div>
+
+    <footer class="bg-dark text-white mt-5">
+        <div class="container py-4">
+            <div class="row" style="text-align:left;">
+                <div class="col-md-3">
+                    <h5>Liên hệ</h5>
+                    <p>Email: xemay@example.com</p>
+                    <p>Điện thoại: 0396 307 789</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Kết nối với chúng tôi</h5>
+                    <a href="https://www.facebook.com" class="text-white mr-2">
+                        <img src="~/Image/footer/fb.png" style="width: 30px; height: 30px;" />
+                    </a>
+                    <a href="#" class="text-white mr-2">
+                        <img src="~/Image/footer/instagam.png" style="width:30px; height:30px;" />
+                    </a>
+                    <a href="#" class="text-white mr-2">
+                        <img src="~/Image/footer/icons8-tiktok-64.png" style="width: 30px; height: 30px;" />
+                    </a>
+                    <a href="~/admin/HomeAdmin/IndexAdmin" class="text-white mr-2">
+                        <img src="~/Image/footer/admin.png" style="width: 30px; height: 30px;" />
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <h5></h5>
+                    <p>
+                        Tầng 17, 19, 20, 21 Tòa nhà Center Building - Hapulico Complex, Số 1 Nguyễn Huy Tưởng, Thanh Xuân, Hà Nội.<br />
+                        Giấy phép thiết lập trang thông tin điện tử tổng hợp trên mạng số 3713 /GP-TTĐT do Sở Thông tin và Truyền thông <br />
+                        thành phố Hà Nội cấp ngày 30 /11/2015.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

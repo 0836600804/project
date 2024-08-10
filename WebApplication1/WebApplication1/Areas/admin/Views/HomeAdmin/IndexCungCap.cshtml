@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebApplication1.Models.NHACUNGCAP>
+
+@{
+    ViewBag.Title = "IndexCungCap";
+    Layout = "~/Areas/admin/Views/Shared/user-admin.cshtml";
+}
+
+<h2>Nhà cung cấp</h2>
+
+<p>
+    @Html.ActionLink("Thêm Mới", "CreateCC")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TENNCC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIACHI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SODIENTHOAI)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENNCC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIACHI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SODIENTHOAI)
+        </td>
+        <td>
+            @Html.ActionLink("Cập nhật", "EditCC", new { id=item.MANCC.Trim() }) |
+            @Html.ActionLink("Xem chi tiết", "DetailsCC", new { id=item.MANCC.Trim() }) |
+            @Html.ActionLink("Xóa", "DeleteCC", new { id=item.MANCC.Trim() })
+        </td>
+    </tr>
+}
+
+</table>

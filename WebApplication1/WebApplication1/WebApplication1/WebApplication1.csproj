@@ -1,0 +1,289 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7997557D-E677-4548-B632-64D3E5158DBA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44351</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\admin\css\style.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="CSS\Menu.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Image\95adf03bf013264684475bc7332e77ae.png" />
+    <Content Include="Image\Anh1.jpg" />
+    <Content Include="Image\Anh2.jpg" />
+    <Content Include="Image\Anh3.jpg" />
+    <Content Include="Image\Artboard 1%402x.png" />
+    <Content Include="Image\baohanh.png" />
+    <Content Include="Image\co-anh.png" />
+    <Content Include="Image\contact.png" />
+    <Content Include="Image\dangky.png" />
+    <Content Include="Image\download.png" />
+    <Content Include="Image\e719ebec-7de7-4d85-aa60-84edb68e6095.png" />
+    <Content Include="Image\exciter150phienbankyniem20nam.png" />
+    <Content Include="Image\f9f47c4f-f156-4105-b2ca-30fe81bd510a.png" />
+    <Content Include="Image\fe8640_af177c0a1b4b47519c4c18932026e186~mv2.png" />
+    <Content Include="Image\footer\admin.png" />
+    <Content Include="Image\footer\fb.png" />
+    <Content Include="Image\footer\icons8-tiktok-64.png" />
+    <Content Include="Image\footer\instagam.png" />
+    <Content Include="Image\gtv-sei-giorni-300.png" />
+    <Content Include="Image\Hinh-anh-xe-may-dien-VinFast-Theon-S.png" />
+    <Content Include="Image\Home.png" />
+    <Content Include="Image\honda-blade-trang-den-6fc1.png" />
+    <Content Include="Image\honda-wave-alpha-4-454d.png" />
+    <Content Include="Image\iconmoto.png" />
+    <Content Include="Image\icons8-cart-64.png" />
+    <Content Include="Image\icons8-export-24.png" />
+    <Content Include="Image\icons8-moto-64.png" />
+    <Content Include="Image\img-top-ventos-blue.png" />
+    <Content Include="Image\Jupiter-Mat-Black-004.png" />
+    <Content Include="Image\kawasaki-z900-abs-2019-gris-55a3a5.png" />
+    <Content Include="Image\LaCoVN.jpg" />
+    <Content Include="Image\LOGO.jpg" />
+    <Content Include="Image\NamAnh.JPG" />
+    <Content Include="Image\phone.png" />
+    <Content Include="Image\Piaggio-_VESPA-GTS-125-ABS-I.E.-Nero-Vulcano.png" />
+    <Content Include="Image\R15_SPCBLACK_IDN_2020-1.png" />
+    <Content Include="Image\search.JPG" />
+    <Content Include="Image\search.png" />
+    <Content Include="Image\tintuc.png" />
+    <Content Include="Image\trang-do-den.png" />
+    <Content Include="Image\WHR.png" />
+    <Content Include="Image\x0qcut.png" />
+    <Content Include="Image\X30-Red-004.png" />
+    <Content Include="Image\xe-xam.png" />
+    <Content Include="Image\—Pngtree—instagram icon_9015422.png" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\admin\adminAreaRegistration.cs" />
+    <Compile Include="Areas\admin\Controllers\HomeAdminController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoaiXeController.cs" />
+    <Compile Include="Controllers\MainHomeController.cs" />
+    <Compile Include="Controllers\ThuongHieuXeController.cs" />
+    <Compile Include="Controllers\XeMayController.cs" />
+    <Compile Include="Data\MyDbContext.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dbConnectSQL.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbConnectSQL.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GioHang.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Areas\admin\Views\web.config" />
+    <Content Include="Areas\admin\Views\Shared\user-admin.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\IndexAdmin.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\DangNhap.cshtml" />
+    <Content Include="Models\dbConnectSQL.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbConnectSQL.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\admin\Views\HomeAdmin\DetailsKH.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\IndexKhachHang.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\EditKH.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\DeleteKH.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\IndexLoaiXe.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\CreateLX.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\DetailsLX.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\EditLX.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\DeleteLX.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\IndexTHUONGHIEU.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\DetailsTH.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\CreateTH.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\EditTH.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\DeleteTH.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\IndexCungCap.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\DetailsCC.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\CreateCC.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\EditCC.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\DeleteCC.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\IndexHoaDon.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\DetailsHD.cshtml" />
+    <Content Include="Areas\admin\Views\HomeAdmin\EditDH.cshtml" />
+    <None Include="Models\dbConnectSQL.dbml.layout">
+      <DependentUpon>dbConnectSQL.dbml</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="Views\UserLayout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\LoaiXe\LoaiXe.cshtml" />
+    <Content Include="Views\ThuongHieuXe\ThuongHieuXe.cshtml" />
+    <Content Include="Views\XeMay\XeMay.cshtml" />
+    <Content Include="Views\XeMay\XeMayTheoLoai.cshtml" />
+    <Content Include="Views\XeMay\XeMayTheoHang.cshtml" />
+    <Content Include="Views\XeMay\XemThongTinXe.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\Share\footer.cshtml" />
+    <Content Include="Views\Share\menu.cshtml" />
+    <Content Include="Views\Share\slide.cshtml" />
+    <Content Include="Views\Share\slideRight.cshtml" />
+    <Content Include="Views\Share\_LayoutMain.cshtml" />
+    <Content Include="Views\MainHome\XeMayMain.cshtml" />
+    <Content Include="Views\MainHome\IndexMain.cshtml" />
+    <Content Include="Views\MainHome\DangNhapTK.cshtml" />
+    <Content Include="Views\MainHome\DangKyTK.cshtml" />
+    <Content Include="Views\XeMay\timXeMay.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\admin\Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50362</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44351/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "XemThongTinXe";
+    Layout = "~/Views/UserLayout.cshtml";
+}
+
+@model WebApplication1.Models.XEMAY
+
+<div class="container mt-5">
+    <h2 class="text-center">THÔNG TIN SẢN PHẨM</h2>
+
+    <div class="card border-dark mx-auto" style="max-width: 600px;">
+        <div class="row g-0">
+            <div class="col-md-5">
+                <img src="@Url.Content("~/Image/" + Model.HINHANH)" class="img-fluid rounded-start" alt="Image">
+            </div>
+            <div class="col-md-7">
+                <div class="card-body" style="text-align:left">
+                    <h5 class="card-title">@Model.TENXEMAY</h5>
+                    <p class="card-text"><strong>Tên Loại Xe:</strong> @Model.LOAIXE.TENLOAIXE</p>
+                    <p class="card-text"><strong>Hãng Xe:</strong> @Model.THUONGHIEUXE.TENTHUONGHIEU</p>
+                    <p class="card-text"><strong>Giá bán:</strong> <span style="color:red;">@string.Format("{0:0,0}", @Model.GIABANXE) VND</span></p>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="@Url.Action("XeMay", "XeMay")" class="btn btn-primary btn-block">Lựa chọn tiếp</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="@Url.Action("ThemVaoHang", "GioHang", new { @ma = Model.MAXEMAY, @strURL = Request.Url.ToString() })" class="btn btn-primary btn-block">Thêm vào giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
